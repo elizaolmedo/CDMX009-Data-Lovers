@@ -4,10 +4,21 @@
 // import data from './data/pokemon/pokemon.js';
 // import data from './data/rickandmorty/rickandmorty.js';
 // import data from './data/steam/steam.js';
-// import data from './data/steam/worldbank.js';
+ import data from './data/worldbank/worldbank.js';
 
 // esta es una función de ejemplo
 
 export const example = () => {
-  return 'example';
+  let datoPrueba;
+  let datos;
+  //datoPrueba = Object.values(data.PER.indicators[1].indicatorName);
+  
+  for(let i in Object.values(data.PER.indicators)){
+    datoPrueba = Object.values(data.PER.indicators[i].indicatorName);
+    datos += i+".-"+ datoPrueba.join("") + ".\n";
+  }
+  
+  return datos;
+  //return datoPrueba.length;
 };
+
