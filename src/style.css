@@ -1,10 +1,59 @@
-/*
-.category{
-  box-sizing:border-box;
-}*/
+@font-face {
+  font-family: font_logo;
+  src: url(../fonts/Chewy/Chewy-Regular.ttf);
+}
+
+@font-face {
+  font-family: font_logo1;
+  src: url(../fonts/Playfair_Display/static/PlayfairDisplay-Bold.ttf);
+}
+
+html{
+  display: flex;
+  justify-content: center;
+}
+
+body{
+  margin:auto;
+  display: flex;
+  flex-direction: column;
+}
+
+div{
+  border: 1px solid blue;
+}
+
+section, header{
+  border: 1px solid black;
+}
+
+#socialNetworks{
+  display: flex;
+  justify-content: flex-end;
+}
+
+#socialNetworks i{
+  padding-left: 10px;
+}
+
+
+#logo p{
+  text-align: center;
+  color:rgba(242,193,19,1);
+  font-size: 90px;
+  font-family: font_logo1;
+}
+
+#logo span{
+  color:black;
+}
+
+
+
 
 .radioImage{
     width: 200px;
+    border: 1px solid black;
 }
 
 /* HIDE RADIO */
@@ -15,6 +64,34 @@
     height: 0;
   }
 
+  .card{
+    position: relative;
+    display: inline-block; /* Make the width of box same as image */
+    /*border: 1px solid black;*/
+    border-radius: 15px;
+  }
+
+  .card .container{
+    position: absolute;
+    z-index: 999;
+    margin: 0 auto;
+    left: 0;
+    right: 0;        
+    text-align: center;
+    top: 100%; /* Adjust this value to move the positioned div up and down */
+    background:rgba(236, 87, 107,0.8);
+    font-family: Arial,sans-serif;
+    color: #fff;
+    width: 100%; /* Set the width of the positioned div */
+    border-radius: 0 0 15px 15px;
+}
+
+.radioImage:hover, .card:hover{
+    width: 220px; 
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+
 .card {
   /* Add shadows to create the "card" effect 
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -24,7 +101,6 @@
   width: 200px;
   
   opacity: .8;*/
-  border: 1px solid black;
   
 }
 
@@ -35,19 +111,14 @@
   
 }*/
 
-
 /* Add some padding inside the card container */
 .container {
-  border: 1px solid red;
+  /*border: 1px solid red;*/
   /*padding: 1px 10px;
-  background-color:rgba(236, 87, 107,1);*/
-  width: 200px;
-  height: 220px;
-  background-repeat: no-repeat;
-  background-image: url("images/fuerzaLaboral.png");
-  background-size: 200px;
-  border-radius:  0 0 15px 15px;
+  background-color:rgba(236, 87, 107,1);
+  border-radius:  0 0 15px 15px;*/
 }
+
 
 /*
 [type=radio]:hover, .radioImage:hover, .container:hover{
