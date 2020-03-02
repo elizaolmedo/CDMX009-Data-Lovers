@@ -2,16 +2,24 @@ import { example } from './data.js';
 
 console.log(example());
 
+
+let objData;
+
+let show = function(){
+  console.log(objData);
+} 
+
 fetch('./data/worldbank/worldbank.json')
-  .then(function(resp){
+.then(function(resp){
   return resp.json();
 })
-let algoThen =  p.then(function(data){
-    return data;
-})
+.then(function(data){
+   objData = data;
+   show(objData); 
+  
+});
 
 
-console.log(algoThen);
 
 
 /*

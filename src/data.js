@@ -10,7 +10,6 @@
 
 export const example = () => {
 
-
   //let datoPrueba;
   //let datos;
   //datoPrueba = Object.values(data.PER.indicators[1].indicatorName);
@@ -23,24 +22,24 @@ export const example = () => {
   return datos;*/
   //return datoPrueba.length;
   //return data;
+
+  let objData = {};
+  fetch('./data/worldbank/worldbank.json')
+  .then(function(resp){
+    return resp.json();
+  })
+  .then(function(data){
+  objData = data;
+  example(); 
+  
+  });
+
+  return objData;
   
 };
 
+/*
 
-
-
-
-/*fetch('./data/worldbank/worldbank.json')
-   
-  .then(response => {
-    let data = await response.json();
-    example(data);
-  })
-  .then(data => {
-    // Work with JSON data here
-    //console.log(data)
-  })
-  .catch(err => {
-    // Do something for an error here
-  })*/
-
+let show = function(){
+  console.log(objData);
+} */
