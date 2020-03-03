@@ -9,6 +9,9 @@
 // esta es una función de ejemplo
 
 export const example = () => {
+  
+  let flag = "Hola, me comunico";
+  return flag;
 
   //let datoPrueba;
   //let datos;
@@ -22,7 +25,7 @@ export const example = () => {
   return datos;*/
   //return datoPrueba.length;
   //return data;
-
+  /*
   let objData = {};
   fetch('./data/worldbank/worldbank.json')
   .then(function(resp){
@@ -34,7 +37,7 @@ export const example = () => {
   
   });
 
-  return objData;
+  return objData;*/
   
 };
 

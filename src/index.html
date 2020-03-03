@@ -2,7 +2,7 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8">
-    <title>Data Lovers</title>
+    <title>Bars & Dots</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css" />
@@ -10,51 +10,49 @@
   </head>
   <body>
     <header>
-      <div id="socialNetworks">
-        <a href=""><i id="facebook" class="fab fa-facebook-f fa-lg"></i></a>
+      <div class="socialNetworks">
+        <a href="https://www.facebook.com/"  target="_blank"><i id="facebook" class="fab fa-facebook-f fa-lg"></i></a>
         <a href=""><i id="twitter" class="fab fa-twitter fa-lg"></i></a>
         <a href=""><i id="instagram" class="fab fa-instagram fa-lg"></i></a>
         <a href=""><i id="pinterest" class="fab fa-pinterest-p fa-lg"></i></a>
         <a href=""><i id ="share" class="fas fa-share-alt fa-lg"></i></a>
       </div>
-      <div id="logo">
+      <div class="logo">
         <p>Bars <span>&</span> Dots</p>
       </div>
-      <div id="about">
+      <div class="about">
         <p>Comparte lo que ahora sabes, <br> construyamos juntos una sociedad crítica e informada. </p>
       </div>
     </header> 
     <section>
-      <div id="country">
-        <select name="" id="">
-          <option value="">Elige un país</option>
-          <option value="">Brasil</option>
-          <option value="">Chile</option>
-          <option value="">México</option>
-          <option value="">Perú</option>
+      <div class="country">
+        <select name="" id="countrySelect">
+          <option value="0">Elige un país</option>
+          <option value="BRA">Brasil</option>
+          <option value="CHI">Chile</option>
+          <option value="MEX">México</option>
+          <option value="PER">Perú</option>
         </select>
       </div>
-      <div id="country">
-      </div> 
-      <div id="category">
+      <div class="categories">
         <label>
-            <input id="fuerzaLaboral" type="radio" name="test" value="small">
+            <input type="radio" name="category" value="fuerzaLaboral">
             <img class ="radioImage" src="images/fuerzaLaboral.png">
           </label>
         <label>
-          <input id="violencia" type="radio" name="test" value="small">
+          <input type="radio" name="category" value="violencia">
           <img class ="radioImage" src="images/violencia.png">
         </label>
         <label>
-          <input id="poblacionMujeres" type="radio" name="test" value="small">
+          <input  type="radio" name="category" value="poblacionMujeres">
           <img class ="radioImage" src="images/poblacionMujeres.png">
         </label>
         <label>
-          <input id="desempleo" type="radio" name="test" value="small">
+          <input type="radio" name="category" value="desempleo">
           <img class ="radioImage" src="images/desempleo.png">
         </label>
         <label>
-          <input id="educacion" type="radio" name="test" value="small">
+          <input type="radio" name="category" value="educacion">
           <img class ="radioImage" src="images/educacion.png">
         </label>
       </div>
