@@ -13,13 +13,13 @@ function categorySelected(category){
   for(let i=0; i < categories.length; i ++){
     if(categories[i].checked){
       console.log("Hay click! "+ categories[i].value + country.value);
-      if(country.value == "0"){
+      if(country.value !== "0"){
+        countryCategory(country.value, categories[i].value);
+      }else{
         categories[i].checked = false;
         country.style.borderColor = "red";
-        setTimeout(function(){ country.style.borderColor = ""; }, 2000);
-        
-      }else{
-        countryCategory(country.value, categories[i].value);
+        country.style.color = "red";
+        setTimeout(function(){ country.style.borderColor = ""; country.style.color = "";}, 2000);
       } 
     }
   }
