@@ -5,11 +5,7 @@ console.log(example());
 let categories = document.getElementsByName("category");
 let country = document.getElementById("countrySelect");
   
-for(let i=0; i < categories.length; i ++){
-  categories[i].onclick = categorySelected;
-} 
-
-function categorySelected(category){ 
+const categorySelected = () => { 
   for(let i=0; i < categories.length; i ++){
     if(categories[i].checked){
       console.log("Hay click! "+ categories[i].value + country.value);
@@ -21,14 +17,21 @@ function categorySelected(category){
         country.style.color = "red";
         setTimeout(function(){ country.style.borderColor = ""; country.style.color = "";}, 2000);
       } 
-    }
+    } 
   }
 }  
 
-function countryCategory(country,category){
+for(let i=0; i < categories.length; i ++){
+  //categories[i].onclick = categorySelected;
+  categories[i].addEventListener("click", categorySelected);
+} 
+
+const countryCategory = (country,category) => {
   //Aquí pasamos a la siguiente página, explorar indicadores
   console.log("Cambia página con: " + country + " " + category)
 }
+
+
   
  
 
