@@ -2,62 +2,40 @@ import { example } from './data.js';
 
 console.log(example());
 
-  let categories = document.getElementsByName("category");
-  let country = document.getElementById("countrySelect");
+let categories = document.getElementsByName("category");
+let country = document.getElementById("countrySelect");
   
-  //console.log(country);
+for(let i=0; i < categories.length; i ++){
+  categories[i].onclick = categorySelected;
+} 
 
+function categorySelected(category){ 
   for(let i=0; i < categories.length; i ++){
-    //console.log(categories[i] + categories[i].checked + categories[i].value);
-    categories[i].onclick = categorySelected;
-  } 
-
-  prueba(country);
-  country.addEventListener("change", prueba);
-
-function categorySelected(){ 
-
-  console.log("Hay click!");
-  for(let i=0; i < categories.length; i ++){
-    //console.log(categories[i] + categories[i].checked + categories[i].value);
-    if(!categories[i].checked){
-      console.log("ningún checked");
-      //let categoryValue = categories[i].value;
-      
-    }else{
-      console.log("entra al if");
-      let categoryValue = categories[i].value;
-      console.log(categoryValue);
-      prueba(categoryValue);
+    if(categories[i].checked){
+      console.log("Hay click! "+ categories[i].value + country.value);
+      if(country.value == "0"){
+        categories[i].checked = false;
+        country.style.borderColor = "red";
+        setTimeout(function(){ country.style.borderColor = ""; }, 2000);
+        
+      }else{
+        countryCategory(country.value, categories[i].value);
+      } 
     }
   }
 }  
 
-function prueba(){
-  //values();
-  //categorySelected();
-  console.log("regresé");
-  if (country.value == "0" || categoryValue.checked == false){
-    console.log("Entre sin pais o sin categoria");
-  }else{
-    console.log("El país es:" + country.value + " La categoria es:" + categoryValue.value);
-  }
-  console.log("Fin");
+function countryCategory(country,category){
+  //Aquí pasamos a la siguiente página, explorar indicadores
+  console.log("Cambia página con: " + country + " " + category)
 }
-
-/*
-function countrySelector(){
-  document.getElementById("countrySelect")
-}*/
+  
+ 
 
 
 
 
-
-
-
-
-
+//Estas eran pruebas con Json
 /*
 let objData;
 
@@ -74,7 +52,7 @@ fetch('./data/worldbank/worldbank.json')
    show(objData); 
   
 });*/
-
+//Estas eran pruebas del overlay
 /*
 document.getElementById("rita").addEventListener("click", on);
 document.getElementById("overlay").addEventListener("click", off);
