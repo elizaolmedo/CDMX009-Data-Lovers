@@ -1,6 +1,4 @@
-import { example } from './data.js';
-
-console.log(example());
+import  bankData  from './data.js';
 
 let categories = document.getElementsByName("category");
 let country = document.getElementById("countrySelect");
@@ -28,7 +26,8 @@ for(let i=0; i < categories.length; i ++){
 
 const countryCategory = (country,category) => {
   //Aquí pasamos a la siguiente página, explorar indicadores
-  console.log("Cambia página con: " + country + " " + category)
+  console.log("Cambia página con: " + country + " " + category);
+  console.log(bankData.filterData(country, category));
 }
 
 
