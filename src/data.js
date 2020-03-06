@@ -18,7 +18,7 @@ export const example = () => {
   
   let bankData = Object.entries(data);
   let country = "MEX";
-  let category = "fuerza laboral"; 
+  let category = "fuerzaLaboral"; 
   let countryData;
   let countryIndicators;
   let countryIndicator;
@@ -26,7 +26,7 @@ export const example = () => {
                                           "negocio", "empresas", "capital humano", 
                                           "trabajo", "empleados", "trabajador",
                                           "estimación"],
-                       "poblacionMujeres":["población", "mujeres"],
+                       "poblacionMujeres":["población mujeres"],
                               "desempleo":["desempleo", "desempleados", "desempleadas"],
                               "educacion":["alumnos", "escuela", "escolar", "ingreso", "inscripción",
                                           "alfabetización", "alfabetizados"]};
@@ -34,41 +34,66 @@ export const example = () => {
 
   for(let i=0; i <= Object.keys(data).length; i ++){
     if(Object.keys(data)[i] == country){
-      countryData = Object.values(data)[i];
-      //countryData es un objeto
+      countryData = Object.values(data)[i]; //countryData es un objeto
     }
   }
 
-  /*  
+  /*
   const getIndicatorsName = () => {
     //return countryIndicators[0];
     return countryIndicators.filter(element => {
-      return element.indicatorName.includes(category) || 
-             element.indicatorName.includes("activa") ||
-             element.indicatorName.includes("activo") ||
-             element.indicatorName.includes("negocio") ||
+      return element.indicatorName.includes("Desempleo") || 
+             element.indicatorName.includes("desempleados") ||
+             element.indicatorName.includes("desempleadas") ||
+             element.indicatorName.includes("desempleo") ||
              element.indicatorName.includes("empresas") ||
-             element.indicatorName.includes("Capital Humano")})
+    element.indicatorName.includes("Capital Humano")}});
   }*/
 
   /*
   const filterKeyWords = () => {
     categoryKeyWords.filter(e => {})
-  }*/
-  
+  }
+  */
   
   const getIndicatorsName = () => {
     //return countryIndicators[0];
     return countryIndicators.filter(element => {
       //let keyW = Object.values(categoryKeyWords.fuerzaLaboral);
-      return element.indicatorName.includes("fuerza" || "laboral");
+      let counter = 0;
+      let keyW;
+      switch(category){
+        case "fuerzaLaboral":
+          keyW = categoryKeyWords.fuerzaLaboral;
+          break;
+        case "poblacionMujeres": 
+          keyW = categoryKeyWords.poblacionMujeres;
+          break;
+        case "desempleo":
+          keyW = categoryKeyWords.desempleo;
+          break;
+        case "educacion":
+          keyW = categoryKeyWords.educacion;
+          break;
+        default:
+          break;       
+      }
+      //let keyW = categoryKeyWords.desempleo; 
+      for(let i=0; i <= keyW.length; i++){
+        if(element.indicatorName.toLowerCase().includes(keyW[i])){
+          counter ++;
+        }
+      }
+      if(counter != 0){
+        return true;
+      }else{
+        return false;
+      }
+      //return element.indicatorName.includes();
     });
   }
 
-  function prueba(e){
-    return true;
-  }
-
+ 
   for(let i=0; i <= Object.keys(countryData).length; i ++){
     if(Object.keys(countryData)[i] == "indicators"){
       countryIndicators = Object.values(countryData)[i];
