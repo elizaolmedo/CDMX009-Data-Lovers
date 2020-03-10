@@ -58,7 +58,7 @@ const filterData = (country, category) => {
         case "desempleo":
           keyW = categoryKeyWords.desempleo;
           break;
-        case "educacion":
+        case "educación":
           keyW = categoryKeyWords.educacion;
           break;
         default:

@@ -2,9 +2,9 @@
 import  bankData  from './data.js';
 
 
-let country = "BRA";
-let category = "fuerza laboral";
-let indicator = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.";
+let country = "MEX";
+let category = "educación";
+//let indicator = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.";
 let section =  document.getElementById("indicatorsCards");
 
 let indicatorName = bankData.filterData(country, category);
@@ -27,6 +27,8 @@ for (let i=0; i< indicatorName.length; i ++){
     let aFacebook = document.createElement("a");
     let aMail = document.createElement("a");
 
+    aCard.setAttribute("id","card"+[i]);
+
     card.setAttribute("class","card");
     cardImage.setAttribute("class","card-image");
     figure.setAttribute("class","imageMedia");
@@ -44,7 +46,7 @@ for (let i=0; i< indicatorName.length; i ++){
     aTwitter.setAttribute("href","https://twitter.com/share?url=<URL>&text=<TEXT>via=<USERNAME>");
     aFacebook.setAttribute("href","https://www.facebook.com/sharer/sharer.php?u=<URL>");
     aMail.setAttribute("href","mailto:?subject=<SUBJECT>&body=<BODY>");
-    aCard.setAttribute("href","");
+    //aCard.setAttribute("href","");
     
   //  tittle.innerHTML= category.toUpperCase();
     indicatorTittle.innerHTML= indicatorName[i] + "." + "<br>";
@@ -66,7 +68,20 @@ for (let i=0; i< indicatorName.length; i ++){
     card.appendChild(aCard);
     card.appendChild(footer);
     section.appendChild(card);
-}  
+}
+
+document.getElementById("card0").addEventListener("click", on);
+document.getElementById("overlay").addEventListener("click", off);
+
+
+function on() {
+    document.getElementById("overlay").style.display = "block";
+  }
+  
+  function off() {
+    document.getElementById("overlay").style.display = "none";
+  }
+
 
 /*
 <div class="card">
