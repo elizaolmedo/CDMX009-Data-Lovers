@@ -4,45 +4,135 @@
 // import data from './data/pokemon/pokemon.js';
 // import data from './data/rickandmorty/rickandmorty.js';
 // import data from './data/steam/steam.js';
-// import data from './data/worldbank/worldbank.js';
+import data from './data/worldbank/worldbank.js';
  
-// esta es una función de ejemplo
+/* data para worldbank es un objeto. Cuando se trae con Object.entries
+regresa como un array, sin embargo, es más "sencillo" traer los datos
+a través de keys y values para el primer nivel. Así, solo tomamos los datos
+que el usuario a elegido. 
+*/
 
-export const example = () => {
+const filterData = (country, category) => {
   
-  let flag = "Hola, me comunico";
-  return flag;
+  //let country = "BRA";
+  //let category = "poblacionMujeres"; 
+  let countryData;
+  let countryIndicators;
+  let indicatorsName = [];
+  let indicatorsData;
+  let indicators;
+  let categoryKeyWords = {"fuerzaLaboral":["fuerza", "laboral", "activa", "activo", 
+                                          "negocio", "empresas", "capital humano", 
+                                          "trabajo", "empleados", "trabajador",
+                                          "estimación"],
+                       "poblacion":["población"],
+                              "desempleo":["desempleo", "desempleados", "desempleadas"],
+                              "educacion":["alumnos", "escuela", "escolar", "ingreso", "inscripción",
+                                          "alfabetización", "alfabetizados"]};
+  
 
-  //let datoPrueba;
-  //let datos;
-  //datoPrueba = Object.values(data.PER.indicators[1].indicatorName);
-  /*
-  for(let i in Object.values(data.PER.indicators)){
-    datoPrueba = Object.values(data.PER.indicators[i].indicatorName);
-    datos += i+".-"+ datoPrueba.join("") + ".\n";
+  for(let i=0; i <= Object.keys(data).length; i ++){
+    if(Object.keys(data)[i] == country){
+      countryData = Object.values(data)[i]; //countryData es un objeto
+    }
+  }
+
+  for(let i=0; i <= Object.keys(countryData).length; i ++){
+    if(Object.keys(countryData)[i] == "indicators"){
+      countryIndicators = Object.values(countryData)[i]; //countryIndicators es un array
+    }
   }
   
-  return datos;*/
-  //return datoPrueba.length;
-  //return data;
-  /*
-  let objData = {};
-  fetch('./data/worldbank/worldbank.json')
-  .then(function(resp){
-    return resp.json();
-  })
-  .then(function(data){
-  objData = data;
-  example(); 
-  
-  });
+  const getIndicators = () => {
+    
+    indicators = countryIndicators.filter(element => {
+      let counter = 0;
+      let keyW;
+      switch(category){
+        case "fuerza laboral":
+          keyW = categoryKeyWords.fuerzaLaboral;
+          break;
+        case "población": 
+          keyW = categoryKeyWords.poblacion;
+          break;
+        case "desempleo":
+          keyW = categoryKeyWords.desempleo;
+          break;
+        case "educación":
+          keyW = categoryKeyWords.educacion;
+          break;
+        default:
+          break;       
+      }
+      
+      for(let i=0; i <= keyW.length; i++){
+        if(element.indicatorName.toLowerCase().includes(keyW[i])){
+          counter ++;
+        }
+      }
+      if(counter != 0){
+        return true;
+      }else{
+        return false;
+      }
+    });
 
-  return objData;*/
-  
+    indicatorsName = indicators.map(e => {
+      return e.indicatorName;
+    });
+
+    //indicatorsData = 
+
+    return indicatorsName;
+  }
+
+  /*
+  const getIndicatorsName = () => {
+    
+    indicators = getIndicators();
+    //return indicators;
+    //return indicators[0].indicatorName;
+    
+    for(let i in indicators){
+      indicatorsName += indicators[i].indicatorName;
+    }
+       
+    return indicatorsName; 
+  }*/
+
+  return getIndicators();
+  //return Object.values(getIndicators()[0])[3];
+  //return ("Hola, soy bankData.filterData y recibí:" + country +" - "+ category);
+
 };
 
-/*
 
+const bankData = {
+  filterData
+  //decode
+};
+
+export default bankData;
+
+  /*
+  const getIndicatorsName = () => {
+    //return countryIndicators[0];
+    return countryIndicators.filter(element => {
+      return element.indicatorName.includes("Desempleo") || 
+             element.indicatorName.includes("desempleados") ||
+             element.indicatorName.includes("desempleadas") ||
+             element.indicatorName.includes("desempleo") ||
+             element.indicatorName.includes("empresas") ||
+    element.indicatorName.includes("Capital Humano")}});
+  }*/
+
+  /*
+  const filterKeyWords = () => {
+    categoryKeyWords.filter(e => {})
+  }
+  */
+
+/*
 let show = function(){
   console.log(objData);
 } */

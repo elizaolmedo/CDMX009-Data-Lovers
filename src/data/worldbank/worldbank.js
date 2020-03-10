@@ -460,7 +460,7 @@ export default {
         },
         "countryName": "Perú",
         "countryCode": "PER",
-        "indicatorName": "Proporcin de tasas de participacin laboral femenina y masculina (%) (estimación modelado OIT)",
+        "indicatorName": "Proporción de tasas de participación laboral femenina y masculina (%) (estimación modelado OIT)",
         "indicatorCode": "SL.TLF.CACT.FM.ZS"
       },
       {
@@ -2836,7 +2836,7 @@ export default {
         },
         "countryName": "Perú",
         "countryCode": "PER",
-        "indicatorName": "Educacin terciaria, profesores (% de mujeres)",
+        "indicatorName": "Educación terciaria, profesores (% de mujeres)",
         "indicatorCode": "SE.TER.TCHR.FE.ZS"
       },
       {
@@ -10036,7 +10036,7 @@ export default {
         },
         "countryName": "México",
         "countryCode": "MEX",
-        "indicatorName": "Educacin terciaria, profesores (% de mujeres)",
+        "indicatorName": "Educación terciaria, profesores (% de mujeres)",
         "indicatorCode": "SE.TER.TCHR.FE.ZS"
       },
       {
@@ -16170,11 +16170,11 @@ export default {
           "2014": 54.8207271348123,
           "2015": 55.3534032106096,
           "2016": 55.5936323250969,
-          "2017": 55.8632133733478
+          "2017": 55.8632133733478  
         },
         "countryName": "México",
         "countryCode": "MEX",
-        "indicatorName": "Proporcin de tasas de participacin laboral femenina y masculina (%) (estimación modelado OIT)",
+        "indicatorName": "Proporción de tasas de participación laboral femenina y masculina (%) (estimación modelado OIT)",
         "indicatorCode": "SL.TLF.CACT.FM.ZS"
       },
       {
@@ -18622,7 +18622,7 @@ export default {
         },
         "countryName": "Brasil",
         "countryCode": "BRA",
-        "indicatorName": "Educacin terciaria, profesores (% de mujeres)",
+        "indicatorName": "Educación terciaria, profesores (% de mujeres)",
         "indicatorCode": "SE.TER.TCHR.FE.ZS"
       },
       {
@@ -25354,7 +25354,7 @@ export default {
         },
         "countryName": "Brasil",
         "countryCode": "BRA",
-        "indicatorName": "Proporcin de tasas de participacin laboral femenina y masculina (%) (estimación modelado OIT)",
+        "indicatorName": "Proporción de tasas de participación laboral femenina y masculina (%) (estimación modelado OIT)",
         "indicatorCode": "SL.TLF.CACT.FM.ZS"
       },
       {
@@ -28000,7 +28000,7 @@ export default {
         },
         "countryName": "Chile",
         "countryCode": "CHL",
-        "indicatorName": "Proporcin de tasas de participacin laboral femenina y masculina (%) (estimación modelado OIT)",
+        "indicatorName": "Proporción de tasas de participación laboral femenina y masculina (%) (estimación modelado OIT)",
         "indicatorCode": "SL.TLF.CACT.FM.ZS"
       },
       {
@@ -30376,7 +30376,7 @@ export default {
         },
         "countryName": "Chile",
         "countryCode": "CHL",
-        "indicatorName": "Educacin terciaria, profesores (% de mujeres)",
+        "indicatorName": "Educación terciaria, profesores (% de mujeres)",
         "indicatorCode": "SE.TER.TCHR.FE.ZS"
       },
       {
