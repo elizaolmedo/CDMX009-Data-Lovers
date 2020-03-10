@@ -1,0 +1,187 @@
+@font-face {
+  font-family: font_logo1;
+  src: url(../fonts/Playfair_Display/static/PlayfairDisplay-Bold.ttf);
+}
+
+@font-face {
+    font-family: font_text1;
+    src: url(../fonts/Cabin_Condensed/CabinCondensed-Regular.ttf);
+  }
+
+html{
+  background-color: #FFFFE7;
+  /*border: 1px solid red;*/
+}
+
+body{
+   /* border: 1px solid blue;*/
+}
+
+div, header, footer, section{
+  /*  border: 1px solid black;*/
+}
+
+.socialNetworks i{
+  margin-top:1em;
+  margin-right: 1em;
+}
+
+.myHeader{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.socialNetworks a{
+  text-decoration: none;
+  color:rgba(23,24,27,1);
+}
+
+.socialNetworks i:hover {
+  color:rgba(23,24,27,0.6);
+}
+
+.logo p{
+ /* border: 1px solid black; */
+  color:rgba(242,193,19,1);
+  font-size: 40px;
+  font-family: font_logo1;
+  margin-bottom: 0;
+  margin-top: 0;
+  margin-left: 0.5em;
+  padding: 0;
+}
+
+.logo span{
+  color:rgba(27,27,29,1);
+}
+
+.landing{
+  background-color: rgba(236,87,107,1);
+  border-radius: 10px;
+  color: white;
+  height: 40px;
+  width: 120px;
+  border: none;
+  text-align: center;
+  font-family: font_text1;
+  font-size: 20px;
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+  margin-left: 1em;
+}
+
+.landing:hover{
+  background-color: rgba(236,87,107,0.8);
+  cursor: pointer;
+}
+
+#indicatorsCards{
+  transition-timing-function: linear;
+  padding:1em;
+  display: flex;
+  /*flex-direction: row;*/
+  justify-content:center;
+  flex-wrap: wrap;
+}
+
+.card {
+  font-family: font_text1;  
+  padding: 15px 10px 15px 10px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 250px;
+  text-align: center;
+  background-color: rgba(229, 229, 229, 0.5);
+  margin: 1em 1em;
+  transition: 0.5s;
+}
+
+.card a {
+  text-decoration: none;
+  color: rgba(27,27,29,1);
+  transition: 3s;
+}
+
+.card:hover {
+  transform: translateY(-20px);
+  box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.4);
+  
+} 
+
+.card-content p{
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  font-size: 17px;
+}
+
+.content p{
+  padding: 0.5em;
+  height: 100px;
+}
+ 
+.share-btn {
+  /*display: inline-block;*/
+  display: flex;
+  justify-content: center;
+  
+  border: none;
+  /*padding: 0.1em 0.6em;
+  outline: none;
+  margin: 0 0.2em;*/
+}
+
+.share-btn a{
+  text-decoration: none;
+  text-align: center;
+  font-size: 0.9em;
+  color: #ffffff;
+  width:100%;
+}
+
+
+.share-btn-twitter:hover,
+.share-btn-facebook:hover,
+.share-btn-email:hover{
+  text-decoration: none;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+/*
+.share-btn:active {
+  color: #e2e2e2;
+  
+}*/
+
+.share-btn-twitter { background: #55acee; }
+.share-btn-facebook { background: #3B5998; }
+.share-btn-email { background: #444444; }
+
+
+@media (max-width: 600px) {
+  .myHeader{
+    justify-content: center;
+  }  
+  
+  .socialNetworks{
+      display: flex;
+      color: white; 
+      justify-content: center;
+      margin-right:0;
+      order:-1;
+    }
+
+    .socialNetworks i{ 
+      margin-top:0.5em;
+      margin-right: 0.5em;
+      margin-left: 0.5em;
+    }
+
+    .logo p{
+      font-size: 35px;
+      margin-top: 0.2em;
+      margin-bottom: 0.2em;
+      display: flex;
+    }
+} 
