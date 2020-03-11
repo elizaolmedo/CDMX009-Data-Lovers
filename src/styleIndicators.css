@@ -178,7 +178,7 @@ div, header, footer, section{
 /* Modal Content */
 .modal-content {
   position: relative;
-  background-color: #fefefe;
+  background-color:rgba(255,255,231,1);
   margin: auto;
   padding: 0;
   border: 1px solid #888;
@@ -187,7 +187,8 @@ div, header, footer, section{
   -webkit-animation-name: animatetop;
   -webkit-animation-duration: 0.4s;
   animation-name: animatetop;
-  animation-duration: 0.4s
+  animation-duration: 0.4s;
+  border-radius: 30px;
 }
 
 /* Add Animation */
@@ -218,15 +219,16 @@ div, header, footer, section{
 
 .modal-header {
   padding: 2px 16px;
-  background-color: #5cb85c;
+  background-color:rgba(236,87,107,1);
   color: white;
+  border-radius: 15px/25px;
 }
 
 .modal-body {padding: 2px 16px;}
 
 .modal-footer {
   padding: 2px 16px;
-  background-color: #5cb85c;
+  background-color:rgba(236,87,107,1);
   color: white;
 }
 

@@ -58,7 +58,7 @@ for (let i=0; i< indicatorName.length; i ++){
     //aCard.setAttribute("href","");
     
   //  tittle.innerHTML= category.toUpperCase();
-    indicatorTittle.innerHTML= String(indicatorName[i] + ".") ;
+    indicatorTittle.innerHTML= indicatorName[i] + "." ;
     aTwitter.innerHTML= "Twitter";
     aFacebook.innerHTML= "Facebook";
     aMail.innerHTML= "EMAIL";
@@ -124,7 +124,8 @@ const prueba = (indicator) => {
 for(let i=0; i < indicatorsCards.length; i ++){
   //categories[i].onclick = categorySelected;
   indicatorsCards[i].addEventListener("click", indicatorsSelected => {
-    indicator = String(indicatorSelected[i].innerHTML.slice(0,-1));//.replace(/&nbsp;/g,' ');
+    //indicator = "Nivel de instrucción, al menos escuela terciaria de ciclo corto finalizada, población de más de 25 años, mujeres (%) (acumulativo)";
+    indicator = indicatorSelected[i].textContent.slice(0,-1);//.replace(/&nbsp;/g,' '));
     //indicatorData = bankData.getIndicatorsData(country, category, indicator);
     prueba(indicator);
     //console.log(indicator);
