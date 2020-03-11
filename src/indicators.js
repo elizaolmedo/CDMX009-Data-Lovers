@@ -7,6 +7,7 @@ let category = "educación";
 //let indicator = "Inscripción escolar, nivel terciario, mujeres (% bruto)";
 let indicator;
 let indicatorData;
+let cardId;
 let section =  document.getElementById("indicatorsCards");
 
 let indicatorsCards = document.getElementsByClassName("aCard");
@@ -79,14 +80,16 @@ for (let i=0; i< indicatorName.length; i ++){
     section.appendChild(card);
 }
 
-/*
-const indicatorSelected = () =>{
 
-  let indicatorData = bankData.getIndicatorsData(country, category, indicator);
-  console.log("Click!!");
-}*/
+const showGraphic = (cardId,indicator) => {
 
-const prueba = (indicator) => {
+  modal.style.display = "block";
+  let graphicModal = document.getElementById("graphicModal");
+
+  let graphic =  document.createElement("canvas");
+  graphic.setAttribute("id","myChart");
+  graphicModal.appendChild(graphic);
+
   indicatorData = bankData.getIndicatorsData(country, category, indicator);
   console.log(Object.keys(indicatorData));
   console.log(Object.values(indicatorData));
@@ -125,84 +128,45 @@ for(let i=0; i < indicatorsCards.length; i ++){
   //categories[i].onclick = categorySelected;
   indicatorsCards[i].addEventListener("click", indicatorsSelected => {
     //indicator = "Nivel de instrucción, al menos escuela terciaria de ciclo corto finalizada, población de más de 25 años, mujeres (%) (acumulativo)";
+    cardId = indicatorSelected[i].id;
     indicator = indicatorSelected[i].textContent.slice(0,-1);//.replace(/&nbsp;/g,' '));
     //indicatorData = bankData.getIndicatorsData(country, category, indicator);
-    prueba(indicator);
+    showGraphic(cardId,indicator);
     //console.log(indicator);
     //console.log(indicatorData);
     //return indicator;
   });
 }
 
-/*
-document.getElementById("card0").addEventListener("click", on);
-document.getElementById("overlay").addEventListener("click", off);
+var modal = document.getElementById("myModal");
 
+// Get the button that opens the modal
+//var btn = document.getElementById(cardId);
 
-function on() {
-    document.getElementById("overlay").style.display = "block";
-  }
-  
-  function off() {
-    document.getElementById("overlay").style.display = "none";
-  }*/
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
 
+// When the user clicks the button, open the modal 
+// btn.onclick = function() {
+// modal.style.display = "block";
+// }
 
-  var modal = document.getElementById("myModal");
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+  let graphicModal = document.getElementById("graphicModal");
+  let eraseChild = graphicModal.lastChild;
+  graphicModal.removeChild(eraseChild); 
+}
 
-  // Get the button that opens the modal
-  var btn = document.getElementById("card0");
-  
-  // Get the <span> element that closes the modal
-  var span = document.getElementsByClassName("close")[0];
-  
-  // When the user clicks the button, open the modal 
-  btn.onclick = function() {
-    modal.style.display = "block";
-  }
-  
-  // When the user clicks on <span> (x), close the modal
-  span.onclick = function() {
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
     modal.style.display = "none";
+    let graphicModal = document.getElementById("graphicModal");
+    let eraseChild = graphicModal.lastChild;
+    graphicModal.removeChild(eraseChild);
   }
-  
-  // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  }
+}
 
 
-
-
-
-/*
-<div class="card">
-        <div class="card-image">
-          <figure class="imageMedia">
-            <img src="images/1.png" style="width:110%" alt="Abstract image">
-          </figure>
-        </div>
-        <div class="card-content">
-          <div class="media"> 
-            <p id="cardCategory" class="title is-4">Educación</p>
-          </div>
-          <div class="content">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Phasellus nec iaculis mauris. <br></p> 
-          <footer class="share-btn">
-            <a href="https://twitter.com/share?url=<URL>&text=<TEXT>via=<USERNAME>" class="share-btn-twitter">Twitter</a>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=<URL>" class="share-btn-facebook">Facebook</a>
-            <a href="mailto:?subject=<SUBJECT>&body=<BODY>" class="share-btn-email">Email</a>
-          </footer>
-        </div>  
-      </div>
-    */
-
-
-console.log(category);
-//console.log(categorySelection());
-
-//console.log("Cambia página con: " + country + " " + category);
-//console.log(bankData.filterData(country, category));

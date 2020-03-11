@@ -165,7 +165,7 @@ div, header, footer, section{
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
+  padding-top: 50px; /* Location of the box */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -181,14 +181,14 @@ div, header, footer, section{
   background-color:rgba(255,255,231,1);
   margin: auto;
   padding: 0;
-  border: 1px solid #888;
-  width: 80%;
+ /* border: 1px solid #888;*/
+  width: 60%;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
   -webkit-animation-name: animatetop;
   -webkit-animation-duration: 0.4s;
   animation-name: animatetop;
   animation-duration: 0.4s;
-  border-radius: 30px;
+  border-radius: 15px;
 }
 
 /* Add Animation */
@@ -221,7 +221,8 @@ div, header, footer, section{
   padding: 2px 16px;
   background-color:rgba(236,87,107,1);
   color: white;
-  border-radius: 15px/25px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 }
 
 .modal-body {padding: 2px 16px;}
@@ -230,11 +231,16 @@ div, header, footer, section{
   padding: 2px 16px;
   background-color:rgba(236,87,107,1);
   color: white;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
 
-.graphic{
-  width: 80%;
-  height: 80%;
+#graphicModal{
+ /* display: flex;
+  justify-content: center;*/
+  
+
+  /* height: 80%;*/
 }
 
 /****************/
@@ -277,4 +283,7 @@ div, header, footer, section{
       margin-bottom: 0.2em;
       display: flex;
     }
+    .modal-content {
+      width: 100%;
+    }  
 } 
