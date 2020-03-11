@@ -113,7 +113,7 @@ const getIndicatorsData = (country, category, indicator) => {
       indicatorsData = indicators[i].data;
       break;
     }else{
-      indicatorsData = "error: "+indicator;
+      indicatorsData = "error: "+ indicator + "\n" + "de data: " + indicators[1].indicatorName;
     }
   }
   /*
