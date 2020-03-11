@@ -147,6 +147,17 @@ select option[value=""]:focus{
     box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.4);
   }
   
+  .footerPage{
+    display: flex;
+    justify-content: center;
+    font-family: font_text1;
+   
+  }
+  
+  .footerPage p{
+    text-align: center;
+    border-top: 1px solid rgba(236,87,107,0.8) ;
+  }
   
   @media (max-width: 600px) {
     .socialNetworks{

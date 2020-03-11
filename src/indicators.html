@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="images/favicon.ico" type="image/png" />
     <link rel="stylesheet" href="styleIndicators.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
   </head>
   <body>
     <header class="myHeader">
@@ -27,7 +28,66 @@
     </div>  
     
     <section id="indicatorsCards">
-     <!--
+    </section>
+
+    <!--
+    <div id="overlay" class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span>
+        <h2>Modal Header</h2>
+      </div>
+      <div class="modal-body">
+        <div class="graphic">
+          <canvas id="myChart" ></canvas> 
+        </div>
+      </div>
+      <div class="modal-footer">
+        <h3>Modal Footer</h3>
+      </div>
+    </div>-->
+
+    <!-- The Modal 
+  <div id="myModal" class="modal">-->
+
+    <!-- Modal content 
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>Some text in the Modal..</p>
+    </div>
+
+  </div>-->
+
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span>
+        <h2>Modal Header</h2>
+      </div>
+      <div class="modal-body">
+        <p>Some text in the Modal Body</p>
+        <p>Some other text...</p>
+        <canvas id="myChart" ></canvas> 
+      </div>
+      <div class="modal-footer">
+        <h3>Modal Footer</h3>
+      </div>
+    </div>
+  
+  </div>
+    
+     
+    <footer class="footerPage">
+      <p>Made with enthusiasm. <br> 
+        &copy; Bars & Dots&reg;, 2020. All rights reserved.</p>
+    </footer>
+  
+    <script type="module" src="indicators.js"></script>
+  </body>
+</html>
+
+<!--
       <div class="card">
         <a href="">
         <div class="card-image">
@@ -55,14 +115,3 @@
          
       </div>
       -->
-    </section>
-    <div id="overlay" >
-      <div id="text">Aquí debe ir la gráfica</div>
-    </div>
-    <script type="module" src="indicators.js"></script>
-    <footer class="footerPage">
-      <p>Made with enthusiasm. <br> 
-        &copy; Bars & Dots, 2020. All rights reserved.</p>
-    </footer>
-  </body>
-</html>
