@@ -18,7 +18,7 @@ const filterData = (country, category) => {
   //let category = "poblacionMujeres"; 
   let countryData;
   let countryIndicators;
-  let indicatorsName = [];
+  
   let indicatorsData;
   let indicators;
   let categoryKeyWords = {"fuerzaLaboral":["fuerza", "laboral", "activa", "activo", 
@@ -77,28 +77,13 @@ const filterData = (country, category) => {
       }
     });
 
+    /*
     indicatorsName = indicators.map(e => {
       return e.indicatorName;
-    });
+    });*/
 
-    //indicatorsData = 
-
-    return indicatorsName;
+    return indicators;
   }
-
-  /*
-  const getIndicatorsName = () => {
-    
-    indicators = getIndicators();
-    //return indicators;
-    //return indicators[0].indicatorName;
-    
-    for(let i in indicators){
-      indicatorsName += indicators[i].indicatorName;
-    }
-       
-    return indicatorsName; 
-  }*/
 
   return getIndicators();
   //return Object.values(getIndicators()[0])[3];
@@ -106,10 +91,53 @@ const filterData = (country, category) => {
 
 };
 
+const getIndicatorsName = (country, category) => {
+
+  let indicators = filterData(country, category);
+  let indicatorsName = [];
+
+  indicatorsName = indicators.map(e => {
+    return e.indicatorName;
+  });
+ 
+  return indicatorsName; 
+}
+
+const getIndicatorsData = (country, category, indicator) => {
+
+  let indicators = filterData(country, category);
+  let indicatorsData;
+
+  for(let i in indicators){
+    if(indicators[i].indicatorName == indicator){
+      indicatorsData = indicators[i].data;
+      break;
+    }else{
+      indicatorsData = "error: "+indicator;
+    }
+  }
+  /*
+  indicatorsData = indicators.map(e => {
+    if(indicator == e.indicatorName){
+      return true;
+    }else{
+      return false;
+    }
+    indicatorsData = indicators.forEach(e => {
+      if(indicator == e.indicatorName){
+        return e.data;
+      }
+
+    return e.data;    
+  });*/
+ 
+  return indicatorsData; 
+}
+
 
 const bankData = {
-  filterData
-  //decode
+  getIndicatorsName,
+  getIndicatorsData
 };
 
 export default bankData;

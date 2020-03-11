@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="images/favicon.ico" type="image/png" />
     <link rel="stylesheet" href="styleIndicators.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
   </head>
   <body>
     <header class="myHeader">
@@ -27,7 +28,24 @@
     </div>  
     
     <section id="indicatorsCards">
-     <!--
+    </section>
+   
+    <div id="overlay" >
+      <div id="text">Aquí debe ir la gráfica</div>
+      <div class="graphic">
+        <canvas id="myChart" width="400" height="400"></canvas> 
+      </div>
+    </div>
+     
+    <footer class="footerPage">
+      <p>Made with enthusiasm. <br> 
+        &copy; Bars & Dots&reg;, 2020. All rights reserved.</p>
+    </footer>
+    <script type="module" src="indicators.js"></script>
+  </body>
+</html>
+
+<!--
       <div class="card">
         <a href="">
         <div class="card-image">
@@ -55,14 +73,3 @@
          
       </div>
       -->
-    </section>
-    <div id="overlay" >
-      <div id="text">Aquí debe ir la gráfica</div>
-    </div>
-    <script type="module" src="indicators.js"></script>
-    <footer class="footerPage">
-      <p>Made with enthusiasm. <br> 
-        &copy; Bars & Dots, 2020. All rights reserved.</p>
-    </footer>
-  </body>
-</html>
