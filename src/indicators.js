@@ -2,22 +2,22 @@
 import  bankData  from './data.js';
 
 
-let country = "BRA";
-let category = "educación";
+let country = "PER";
+let category = "población";
 //let indicator = "Inscripción escolar, nivel terciario, mujeres (% bruto)";
 let indicator;
 let indicatorData;
 let cardId;
 let section =  document.getElementById("indicatorsCards");
-
 let indicatorsCards = document.getElementsByClassName("aCard");
 let indicatorSelected = document.getElementsByClassName("indicatorTittle");
-
 let indicatorName = bankData.getIndicatorsName(country, category);
-//console.log(indicatorName);
-
 let overlayDiv = document.getElementById("text");
+let pageTittle = document.getElementById("pageTittle");
+let modal = document.getElementById("myModal");
+let span = document.getElementsByClassName("close")[0];
 
+pageTittle.textContent = country.toUpperCase() + "-" + category.toUpperCase();
 
 for (let i=0; i< indicatorName.length; i ++){
     let card = document.createElement("div");
@@ -85,7 +85,9 @@ const showGraphic = (cardId,indicator) => {
 
   modal.style.display = "block";
   let modalHeader = document.getElementById("modalHeader");
-  modalHeader.textContent = indicator;
+  modalHeader.textContent = category.toUpperCase();
+  let modalIndicator = document.getElementById("modalIndicator");
+  modalIndicator.textContent = indicator;
   let graphicModal = document.getElementById("graphicModal");
 
   let graphic =  document.createElement("canvas");
@@ -97,28 +99,108 @@ const showGraphic = (cardId,indicator) => {
   console.log(Object.values(indicatorData));
   console.log(bankData.getIndicatorsData(country, category, indicator));
   //overlayDiv.innerHTML = Object.keys(indicatorData);
+  /*
+  let barChartData = {
+    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+    datasets: [{
+      label: 'Dataset 1',
+      backgroundColor: 'rgba(242,193,19,0.5)',
+      data: [
+        10, 20, 30, 40, 50
+      ]
+    }, {
+      label: 'Dataset 2',
+      backgroundColor: 'rgb(66, 134, 244,1)',
+      data: [
+        5, 15, 25, 30, 35, 40
+      ]
+    }, {
+      label: 'Dataset 3',
+      backgroundColor: 'rgb(229, 89, 50,1)',
+      data: [
+        20, 23, 34, 45, 56
+      ]
+    }]
+
+  };*/
+
+
+
   var ctx= document.getElementById("myChart").getContext("2d");
   var myChart= new Chart(ctx,{
-      type:"bar",
+      type:"line",
       data:{
           labels:Object.keys(indicatorData),
           datasets:[{
-                  label:'Data', 
-                  data:Object.values(indicatorData),
-                  backgroundColor:'rgba(242,193,19,1)'
-                  /*[
-                      'rgb(66, 134, 244,1)',
-                      'rgb(74, 135, 72,1)',
-                      'rgb(229, 89, 50,1)'
-                  ]*/
-          },{
-            data:[10,20,30],
-            type:'line',
-            backgroundColor:'rgb(66, 134, 244,1)'
-          }]
-      },
+                    label:country, 
+                    data:Object.values(indicatorData),
+                    //data: barChartData,
+                    backgroundColor:'rgba(242,193,19,0.5)',
+                    borderColor: 'rgba(242,193,19,1)',
+                    borderWidth: 3, 
+                    fill: false
+                   },{
+                    label:'BRA', 
+                    type: 'line',
+                    data:Object.values(bankData.getIndicatorsData('BRA', category, indicator)),
+                    //data: barChartData,
+                    backgroundColor:'rgb(79, 205, 169,0.5)',
+                    borderColor: 'rgb(79, 205, 169,1)',
+                    borderWidth: 3, 
+                    fill: false                 
+                   },{
+                    label:'MEX', 
+                    type: 'line',
+                    data:Object.values(bankData.getIndicatorsData('MEX', category, indicator)),
+                    //data: barChartData,
+                    backgroundColor:'rgb(229, 89, 50,1)',
+                    borderColor: 'rgb(229, 89, 50,1)',
+                    borderWidth: 3, 
+                    fill: false                 
+                   },{
+                    label:'CHL', 
+                    type: 'line',
+                    data:Object.values(bankData.getIndicatorsData('CHL', category, indicator)),
+                    //data: barChartData,
+                    backgroundColor:'rgb(66, 134, 244,1)',
+                    borderColor: 'rgb(66, 134, 244,1)',
+                    borderWidth: 3, 
+                    fill: false                 
+                  } /*{
+                  label: '',
+                  data:[10, 50, 60],
+                  type:'bar',
+                  backgroundColor:'rgb(74, 135, 72,1)',
+                
+                  }, {
+                  label: '',
+                  data:[10, 40, 50],
+                  type:'bar',
+                  backgroundColor:'rgb(229, 89, 50,1)',
+                
+                }*/
+               ]},
       options:{
-          scales:{
+          /*
+					title: {
+						display: true,
+						text: indicator
+					},
+					tooltips: {
+						mode: 'index',
+						intersect: false
+					},
+					responsive: true,
+					scales: {
+						xAxes: [{
+							stacked: true,
+						}],
+						yAxes: [{
+							stacked: true
+						}]
+					}*/
+          
+        scales:{
               yAxes:[{
                       ticks:{
                           beginAtZero:true
@@ -131,12 +213,9 @@ const showGraphic = (cardId,indicator) => {
 
 
 for(let i=0; i < indicatorsCards.length; i ++){
-  //categories[i].onclick = categorySelected;
-  indicatorsCards[i].addEventListener("click", indicatorsSelected => {
-    //indicator = "Nivel de instrucción, al menos escuela terciaria de ciclo corto finalizada, población de más de 25 años, mujeres (%) (acumulativo)";
+    indicatorsCards[i].addEventListener("click", indicatorsSelected => {
     cardId = indicatorSelected[i].id;
-    indicator = indicatorSelected[i].textContent.slice(0,-1);//.replace(/&nbsp;/g,' '));
-    //indicatorData = bankData.getIndicatorsData(country, category, indicator);
+    indicator = indicatorSelected[i].textContent.slice(0,-1);
     showGraphic(cardId,indicator);
     //console.log(indicator);
     //console.log(indicatorData);
@@ -144,19 +223,17 @@ for(let i=0; i < indicatorsCards.length; i ++){
   });
 }
 
-var modal = document.getElementById("myModal");
+
 
 // Get the button that opens the modal
 //var btn = document.getElementById(cardId);
 
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks the button, open the modal 
 // btn.onclick = function() {
 // modal.style.display = "block";
 // }
-
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
   modal.style.display = "none";

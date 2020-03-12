@@ -23,9 +23,13 @@
         <a href=""><i id ="share" class="fas fa-share-alt fa-lg"></i></a>
       </div>
     </header>
-    <div>
+    <div class="pageMiddle">
       <input class="landing" type="button" value="Regresar" onclick="location.href='./index.html'">
+      <div>
+        <h1 id="pageTittle"></h1>
+      </div>
     </div>  
+    
     
     <section id="indicatorsCards">
     </section>
@@ -63,16 +67,19 @@
     <div class="modal-content">
       <div class="modal-header">
         <span class="close">&times;</span>
-        <h2 id="modalHeader"> </h2>
+       <h2 id="modalHeader"> </h2>
       </div>
       <div class="modal-body">
-        <p>Some text in the Modal Body</p>
-        <p>Some other text...</p>
-        <div id ="graphicModal"> </div>
+        <div>
+          <p id="modalIndicator"> </p>
+          <input class="compare" type="button" value="Comparar">
+        </div>
+        <div id ="graphicModal"> 
          <!-- <canvas id="myChart" ></canvas> -->
+        </div> 
       </div>
       <div class="modal-footer">
-        <h3>Modal Footer</h3>
+        <h3></h3>
       </div>
     </div>
   
