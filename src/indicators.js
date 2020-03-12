@@ -84,6 +84,8 @@ for (let i=0; i< indicatorName.length; i ++){
 const showGraphic = (cardId,indicator) => {
 
   modal.style.display = "block";
+  let modalHeader = document.getElementById("modalHeader");
+  modalHeader.textContent = indicator;
   let graphicModal = document.getElementById("graphicModal");
 
   let graphic =  document.createElement("canvas");
@@ -109,6 +111,10 @@ const showGraphic = (cardId,indicator) => {
                       'rgb(74, 135, 72,1)',
                       'rgb(229, 89, 50,1)'
                   ]*/
+          },{
+            data:[10,20,30],
+            type:'line',
+            backgroundColor:'rgb(66, 134, 244,1)'
           }]
       },
       options:{
