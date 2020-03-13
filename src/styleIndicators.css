@@ -78,22 +78,22 @@ div, header, footer, section{
 
 
 .pageMiddle{
-  border: 1px solid black;
+/*border: 1px solid black;*/
   display:flex;
- /* justify-content: space-between;*/
+  justify-content: space-between;
   flex-wrap: wrap; 
 }
 
 .pageMiddle div{
-  border: 1px solid black;
-  flex-grow: 1;
+ /* border: 1px solid black;*/
+  
 }
 
 #pageTittle{
-  border: 1px solid black;
+/*border: 1px solid black;*/
+  left: 50% ;
   margin-right: 2em;
   font-family: font_text1;
-  
 }
 
 #indicatorsCards{
@@ -252,7 +252,9 @@ div, header, footer, section{
   text-align: center;
 }
 
-.modal-body {padding: 15px 16px;}
+.modal-body {
+  padding: 15px 16px;
+}
 
 .modal-footer {
   padding: 2px 16px;
@@ -275,9 +277,15 @@ div, header, footer, section{
 
 #modalIndicator{
   font-size: 20px;
+  margin-left: 1em;
 }
 
-.compare{
+.inputContainer{
+  display: flex;
+  justify-content: flex-end;
+}
+
+#compare{
   background-color: rgba(236,87,107,0.9);
   border-radius: 10px;
   color: white;
@@ -287,9 +295,10 @@ div, header, footer, section{
   text-align: center;
   font-family: font_text1;
   font-size: 20px;
+  margin-right: 1em;
 }
 
-.compare:hover{
+#compare:hover{
   background-color: rgba(236,87,107,0.8);
   cursor: pointer;
 }
@@ -347,5 +356,24 @@ div, header, footer, section{
     }
     .modal-content {
       width: 100%;
-    }  
+    } 
+    
+    #modalIndicator{
+      font-size: 17px;
+    }
+
+    #compare{
+      height: 30px;
+      width: 100px;
+    }
+    
+    .modal-header{
+      font-size: 15px;
+    }
+
+    #graphicModal{
+      width: 100%;
+      padding-left: 0em;
+    }
+
 } 
