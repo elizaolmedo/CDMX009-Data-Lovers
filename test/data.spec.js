@@ -1,13 +1,13 @@
 // importamos la función `example`
-import { example } from "../src/data";
+import { bankData } from "../src/data";
 
-describe('example', () => {
+describe('bankData', () => {
 
   it('debería ser una función', () => {
-    expect(typeof example).toBe('function');
+    expect(typeof bankData).toBe('function');
   });
 
-  describe('example', () => {
+  //describe('example', () => {
     // escribe aquí tu test
-  });
+  //});
 });

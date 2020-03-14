@@ -91,7 +91,6 @@ div, header, footer, section{
 
 #pageTittle{
 /*border: 1px solid black;*/
-  left: 50% ;
   margin-right: 2em;
   font-family: font_text1;
 }
@@ -185,7 +184,7 @@ div, header, footer, section{
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
-  padding-top: 3em; /* Location of the box */
+  padding-top: 2.5em; /* Location of the box */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -194,9 +193,6 @@ div, header, footer, section{
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   font-family: font_text1;
-  /*max-height: calc(100vh - 210px);*/
-    overflow-y: auto;
-    
 }
 
 /* Modal Content */
@@ -207,8 +203,7 @@ div, header, footer, section{
   padding: 0;
  /* border: 1px solid #888;*/
   width: 60%;
- 
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4),0 10px 22px 0 rgba(0,0,0,0.25);
   -webkit-animation-name: animatetop;
   -webkit-animation-duration: 0.4s;
   animation-name: animatetop;
@@ -317,23 +312,42 @@ div, header, footer, section{
   border-top: 1px solid rgba(236,87,107,0.8) ;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
   .modal-content{
-    width: 80%;
+     width: 70%;
+   }
+ }
+
+
+@media (max-width: 1000px) {
+ .modal-content{
+    width: 75%;
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .modal-content{
-    width: 90%;
+     width: 80%;
+   }
+ }
+
+@media (max-width: 800px) {
+ .modal-content{
+    width: 85%;
   }
 }
+
+@media (max-width: 700px) {
+  .modal-content{
+     width: 95%;
+   }
+ }
 
 @media (max-width: 600px) {
   .myHeader{
     justify-content: center;
   }  
-  
+    
   .socialNetworks{
       display: flex;
       color: white; 
@@ -348,12 +362,31 @@ div, header, footer, section{
       margin-left: 0.5em;
     }
 
-    .logo p{
-      font-size: 35px;
-      margin-top: 0.2em;
-      margin-bottom: 0.2em;
+    .logo{
       display: flex;
+      justify-content: center;
+      width: 100%;
     }
+
+    .logo p{
+      margin-left: 0em;
+    }
+
+    .pageMiddle div{
+      display: flex;
+      justify-content: center;
+      width:  100%;
+    }
+
+    #pageTittle{
+      margin-right: 0;
+      text-align: center;
+    }
+
+    .modal{
+      padding-top: 4.5em;
+    }
+   
     .modal-content {
       width: 100%;
     } 

@@ -29,41 +29,6 @@
   } 
 
   for(let i=0; i < categories.length; i ++){
-    //categories[i].onclick = categorySelected;
     categories[i].addEventListener("click", categorySelected);
   }
 
-
-
-
-  /*
-  const countryCategory = (country, category) => {
-    console.log();
-  }*/
-
-  //console.log(categorySelected());
-
-//export country; 
-
-/*
-const countryCategory = {
-  countrySelection, 
-  categorySelection
-};
-
-export default countryCategory;
-*/
-
-//Estas eran pruebas del overlay
-/*
-document.getElementById("rita").addEventListener("click", on);
-document.getElementById("overlay").addEventListener("click", off);
-
-
-function on() {
-    document.getElementById("overlay").style.display = "block";
-  }
-  
-  function off() {
-    document.getElementById("overlay").style.display = "none";
-  }*/
