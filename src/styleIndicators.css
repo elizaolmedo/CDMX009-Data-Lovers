@@ -76,6 +76,26 @@ div, header, footer, section{
   cursor: pointer;
 }
 
+
+.pageMiddle{
+/*border: 1px solid black;*/
+  display:flex;
+  justify-content: space-between;
+  flex-wrap: wrap; 
+}
+
+.pageMiddle div{
+ /* border: 1px solid black;*/
+  
+}
+
+#pageTittle{
+/*border: 1px solid black;*/
+  left: 50% ;
+  margin-right: 2em;
+  font-family: font_text1;
+}
+
 #indicatorsCards{
   transition-timing-function: linear;
   padding:1em;
@@ -165,14 +185,18 @@ div, header, footer, section{
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
-  padding-top: 50px; /* Location of the box */
+  padding-top: 3em; /* Location of the box */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
+  /*overflow: auto;*/ /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  font-family: font_text1;
+  /*max-height: calc(100vh - 210px);*/
+    overflow-y: auto;
+    
 }
 
 /* Modal Content */
@@ -183,12 +207,14 @@ div, header, footer, section{
   padding: 0;
  /* border: 1px solid #888;*/
   width: 60%;
+ 
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
   -webkit-animation-name: animatetop;
   -webkit-animation-duration: 0.4s;
   animation-name: animatetop;
   animation-duration: 0.4s;
   border-radius: 15px;
+
 }
 
 /* Add Animation */
@@ -219,28 +245,62 @@ div, header, footer, section{
 
 .modal-header {
   padding: 2px 16px;
-  background-color:rgba(236,87,107,1);
+  background-color:rgba(236,87,107,0.9);
   color: white;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
+  text-align: center;
 }
 
-.modal-body {padding: 2px 16px;}
+.modal-body {
+  padding: 15px 16px;
+}
 
 .modal-footer {
   padding: 2px 16px;
-  background-color:rgba(236,87,107,1);
+  background-color:rgba(236,87,107,0.9);
   color: white;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
 }
 
 #graphicModal{
- /* display: flex;
-  justify-content: center;*/
-  
+ display: flex;
+  justify-content: center;
+  width: 95%;
+  padding-left: 1.5em;
+}
 
-  /* height: 80%;*/
+#myChart{
+  width: 400px;
+}
+
+#modalIndicator{
+  font-size: 20px;
+  margin-left: 1em;
+}
+
+.inputContainer{
+  display: flex;
+  justify-content: flex-end;
+}
+
+#compare{
+  background-color: rgba(236,87,107,0.9);
+  border-radius: 10px;
+  color: white;
+  height: 40px;
+  width: 120px;
+  border: none;
+  text-align: center;
+  font-family: font_text1;
+  font-size: 20px;
+  margin-right: 1em;
+}
+
+#compare:hover{
+  background-color: rgba(236,87,107,0.8);
+  cursor: pointer;
 }
 
 /****************/
@@ -257,6 +317,17 @@ div, header, footer, section{
   border-top: 1px solid rgba(236,87,107,0.8) ;
 }
 
+@media (max-width: 1000px) {
+  .modal-content{
+    width: 80%;
+  }
+}
+
+@media (max-width: 800px) {
+  .modal-content{
+    width: 90%;
+  }
+}
 
 @media (max-width: 600px) {
   .myHeader{
@@ -285,5 +356,24 @@ div, header, footer, section{
     }
     .modal-content {
       width: 100%;
-    }  
+    } 
+    
+    #modalIndicator{
+      font-size: 17px;
+    }
+
+    #compare{
+      height: 30px;
+      width: 100px;
+    }
+    
+    .modal-header{
+      font-size: 15px;
+    }
+
+    #graphicModal{
+      width: 100%;
+      padding-left: 0em;
+    }
+
 } 

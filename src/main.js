@@ -15,6 +15,8 @@
           //countryCategory(countries.value, categories[i].value);
           category = categories[i].value;
           country = countries.value;
+          localStorage.category = category
+          localStorage.country = country
           location.href="indicators.html"; //Aquí pasamos a la siguiente página, explorar indicadores
         }else{
           categories[i].checked = false;
