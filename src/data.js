@@ -77,18 +77,11 @@ const filterData = (country, category) => {
       }
     });
 
-    /*
-    indicatorsName = indicators.map(e => {
-      return e.indicatorName;
-    });*/
-
     return indicators;
   }
 
   return getIndicators();
-  //return Object.values(getIndicators()[0])[3];
-  //return ("Hola, soy bankData.filterData y recibí:" + country +" - "+ category);
-
+  
 };
 
 const getIndicatorsName = (country, category) => {
@@ -116,20 +109,6 @@ const getIndicatorsData = (country, category, indicator) => {
       indicatorsData = "error: "+ indicator + "\n" + "de data: " + indicators[1].indicatorName;
     }
   }
-  /*
-  indicatorsData = indicators.map(e => {
-    if(indicator == e.indicatorName){
-      return true;
-    }else{
-      return false;
-    }
-    indicatorsData = indicators.forEach(e => {
-      if(indicator == e.indicatorName){
-        return e.data;
-      }
-
-    return e.data;    
-  });*/
  
   return indicatorsData; 
 }
@@ -141,26 +120,3 @@ const bankData = {
 };
 
 export default bankData;
-
-  /*
-  const getIndicatorsName = () => {
-    //return countryIndicators[0];
-    return countryIndicators.filter(element => {
-      return element.indicatorName.includes("Desempleo") || 
-             element.indicatorName.includes("desempleados") ||
-             element.indicatorName.includes("desempleadas") ||
-             element.indicatorName.includes("desempleo") ||
-             element.indicatorName.includes("empresas") ||
-    element.indicatorName.includes("Capital Humano")}});
-  }*/
-
-  /*
-  const filterKeyWords = () => {
-    categoryKeyWords.filter(e => {})
-  }
-  */
-
-/*
-let show = function(){
-  console.log(objData);
-} */

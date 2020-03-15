@@ -154,12 +154,18 @@ const oneGraphic = () => {
   });
 }
 
+const removeGraphic = () => {
+  let graphicModal = document.getElementById("graphicModal");
+  let eraseChild = graphicModal.lastChild;
+  graphicModal.removeChild(eraseChild);
+} 
 
 const showGraphic = (indicator) => {
   let toggleButtonFlag = false;
   let modalHeader = document.getElementById("modalHeader");
   let modalIndicator = document.getElementById("modalIndicator");
   let compareButton = document.getElementById("compare");
+  compareButton.value = "Comparar";
   
   createGraphic();
 
@@ -196,11 +202,6 @@ for(let i=0; i < indicatorsCards.length; i ++){
   });
 }
 
-const removeGraphic = () => {
-  let graphicModal = document.getElementById("graphicModal");
-  let eraseChild = graphicModal.lastChild;
-  graphicModal.removeChild(eraseChild);
-} 
 
 // When the user clicks (x) of the modal, close it
 span.onclick = function() {
